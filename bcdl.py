@@ -10,8 +10,6 @@ def PrintUsage():
     Also supports multiple urls!!!\n
         bcdl.py [bandcamp url 1] [bandcamp url 2]""")
 
-Allow=False # To skip first argv parameter
-
 def DL(url):
     SongName = url.split("/")[4]
     print(f"Beginning Download For {SongName}")
@@ -46,7 +44,6 @@ def CheckURLType(url):
             print(f"DOWNLOADING -- [{i}/{len(tracks)}]")
             DL(nw+track[0])
             i+=1
-
 
 if len(sys.argv) == 1:
     PrintUsage()
