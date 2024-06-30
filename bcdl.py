@@ -28,8 +28,7 @@ def CheckURLType(url):
     if url.split("/")[3] == "track":
         DL(url)
     elif url.split("/")[3] == "album":
-        print("Downloading Album")
-        print("Getting Page Contents")
+        print("""Downloading Album"\nGetting Page Contents""")
         r = requests.get(url, allow_redirects=True)
         content = r.text
         print("Finding Tracks")
@@ -39,11 +38,10 @@ def CheckURLType(url):
         url_thing = nw.rfind("/")
         nw = nw[:url_thing]
         nw = nw[:url.rfind("/")]+"/track/"
-        i=1
-        for track in tracks:
-            print(f"DOWNLOADING -- [{i}/{len(tracks)}]")
+        tracklen = len(tracks)
+        for i, track in enumerate(tracks):
+            print(f"DOWNLOADING -- [{i}/{tracklen}]")
             DL(nw+track[0])
-            i+=1
 
 if len(sys.argv) == 1:
     PrintUsage()
