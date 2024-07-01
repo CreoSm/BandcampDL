@@ -17,7 +17,7 @@ def progressb(j,m):
     x = x = int(pbsize*j/m)
 
     
-    print("[{}{}] [ {}% ]".format(">"*x, " "*(pbsize-x), int(perc)),  end='\r', file=out, flush=True)
+    print("█{}{}█ [ {}% ]".format("█"*x, "░"*(pbsize-x), int(perc)),  end='\r', file=out, flush=True)
 
 def DL(url):
     SongName = url.split("/")[4]
