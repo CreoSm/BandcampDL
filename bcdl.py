@@ -55,7 +55,7 @@ def CheckURLType(url):
         nw = nw[:url.rfind("/")]+"/track/"
         tracklen = len(tracks)
         for i, track in enumerate(tracks):
-            print(f"DOWNLOADING -- [{i}/{tracklen}]")
+            print(f"DOWNLOADING -- [{i+1}/{tracklen}]")
             DL(nw+track[0])
 
 if len(sys.argv) == 1:
